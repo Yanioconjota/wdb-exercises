@@ -1,0 +1,33 @@
+{
+  "name": "udemy",
+  "version": "1.0.0",
+  "description": "Exercises from Udemy's Web Developer Bootcamp course",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yanioconjota/wdb-exercises.git"
+  },
+  "keywords": [
+    "exercises",
+    "html5",
+    "css3",
+    "javascript",
+    "jquery"
+  ],
+  "author": "Janio Isacura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yanioconjota/wdb-exercises/issues"
+  },
+  "homepage": "https://github.com/Yanioconjota/wdb-exercises#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "fontawesome": "^4.5.0",
+    "jquery": "^1.12.3"
+  }
+}
