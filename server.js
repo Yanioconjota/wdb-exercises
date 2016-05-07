@@ -24,6 +24,10 @@ app.get('/04-cssbasics', function (req, res) {
   res.render('../04-cssbasics.html');
 });
 
+app.get('/05-gallery', function (req, res) {
+  res.render('../05-gallery.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
