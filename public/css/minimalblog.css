@@ -28,7 +28,7 @@ hr {
 
 date {
   font-weight: bold;
-  letter-spacing: .25em;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: rgba(0, 247, 225, 0.25);
   margin-bottom: 1em;
@@ -46,8 +46,9 @@ h2 {
 }
 
 section {
-  width: 50%;
-  margin: auto;
+  max-width: 700px;
+  width: 90%;
+  margin: 2em auto;
   border: 20px solid rgba(0, 247, 225, 0.45);
   box-sizing: border-box;
   padding: 3em;
@@ -59,8 +60,6 @@ article {
 
 @media only screen and (max-width : 640px) {
   section {
-    width: 90%;
-    margin: auto;
     border: 5px solid rgba(0, 247, 225, 0.45);
     padding: 1em;
   }
