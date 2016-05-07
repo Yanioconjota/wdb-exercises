@@ -39,9 +39,10 @@ date sup {
   letter-spacing: initial;
 }
 
-h1 {
+h2 {
   text-transform: capitalize;
   color: aqua;
+  font-size: 1.5em;
 }
 
 section {
