@@ -28,6 +28,10 @@ app.get('/05-gallery', function (req, res) {
   res.render('../05-gallery.html');
 });
 
+app.get('/06-minimalblog', function (req, res) {
+  res.render('../06-minimalblog.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });

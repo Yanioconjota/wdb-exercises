@@ -1,0 +1,66 @@
+body {
+  font-family: 'source sans pro';
+  color: rgba(0, 247, 225, 0.51);
+  background-color: hsl(270, 40%, 18%);
+}
+
+p:nth-of-type(1){
+  font-style: italic;
+  font-weight: bold;
+  border-left: 1px dashed rgba(0, 247, 225, 0.55);
+  padding-left: 1em;
+  color: rgba(0, 247, 225, 0.8);
+}
+
+p {
+  font-size: 14px;
+  line-height: 2;
+  text-align: justify;
+}
+
+hr {
+  border-top: 1px solid #2EA9E1;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin: 1.5em 0;
+}
+
+date {
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: rgba(0, 247, 225, 0.25);
+  margin-bottom: 1em;
+}
+
+date sup {
+  font-size: .5em;
+  letter-spacing: initial;
+}
+
+h1 {
+  text-transform: capitalize;
+  color: aqua;
+}
+
+section {
+  width: 50%;
+  margin: auto;
+  border: 20px solid rgba(0, 247, 225, 0.45);
+  box-sizing: border-box;
+  padding: 3em;
+}
+
+article {
+  padding: 1em;
+}
+
+@media only screen and (max-width : 640px) {
+  section {
+    width: 90%;
+    margin: auto;
+    border: 5px solid rgba(0, 247, 225, 0.45);
+    padding: 1em;
+  }
+}
