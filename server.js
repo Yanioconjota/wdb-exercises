@@ -8,16 +8,20 @@ app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
-app.get('/training1', function (req, res) {
-  res.render('../training-01.html');
+app.get('/01-boilerplate', function (req, res) {
+  res.render('../01-boilerplate.html');
 });
 
-app.get('/training2', function (req, res) {
-  res.render('../training-02.html');
+app.get('/02-tables', function (req, res) {
+  res.render('../02-tables.html');
 });
 
-app.get('/training3', function (req, res) {
-  res.render('../training-03.html');
+app.get('/03-cssintro', function (req, res) {
+  res.render('../03-cssintro.html');
+});
+
+app.get('/04-cssbasics', function (req, res) {
+  res.render('../04-cssbasics.html');
 });
 
 app.listen(8000, function () {
