@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .btn-main {
-  background-color: rgba(69, 58, 136, 0.22);;
+  background-color: rgba(69, 58, 136, 0.22);
   border: 1px solid aqua;
   color: rgba(69, 58, 136, 0.72);
   text-transform: uppercase;
@@ -87,7 +87,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .intro {
   padding-top: 25vh;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .intro hr {
