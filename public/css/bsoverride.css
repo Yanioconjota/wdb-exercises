@@ -85,10 +85,16 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgba(69, 58, 136, 0.72);
 }
 
+
 .intro {
-  padding-top: 25vh;
+  padding-top: 10vh;
   color: rgba(255, 255, 255, 0.85);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.intro i.fa {
+  font-size: 8em;
+  margin-bottom:.3em;
 }
 
 .intro hr {
@@ -102,10 +108,12 @@ h1,h2,h3,h4,h5,h6 {
 .intro .btn-main {
   color: rgba(255, 255, 255, 0.6);
   margin: auto 1em;
+  padding: 2em;
+  font-weight: bold;
 }
 
 .img-bg-01 {
-  background: url(https://images.unsplash.com/photo-1415860407914-fe42e09b4f77?crop=entropy&fit=crop&fm=jpg&h=700&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375);
+  background: url(http://pre13.deviantart.net/9414/th/pre/i/2013/250/9/9/r_lyeh_by_empslol-d6lctdi.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
