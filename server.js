@@ -38,6 +38,10 @@ app.get('/07-bsgallery', function (req, res) {
   res.render('../07-bsgallery.html');
 });
 
+app.get('/08-landingpage', function (req, res) {
+  res.render('../08-landingpage.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
