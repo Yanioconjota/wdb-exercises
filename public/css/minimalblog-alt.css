@@ -1,0 +1,124 @@
+body {
+  font-family: 'source sans pro';
+  color: rgba(69, 58, 136, 0.72);
+  background-color: slateblue;
+  font-size: .85rem;
+}
+
+p:nth-of-type(1){
+  font-weight: bold;
+  line-height: 3;
+  border-left: 1px dashed rgba(106, 90, 205, 0.52);
+  padding-left: 3em;
+  margin: 4em 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 2;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: table;
+}
+
+.table > * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.separator {
+  padding: 0;
+  list-style-type: none;
+  margin: 4em 0;
+}
+
+.line {
+  border-top: 1px solid rgba(69, 58, 136, 0.72);
+  width: 30%;
+}
+
+.line + * > [class*="arrow-"] {
+  vertical-align: top;
+}
+
+.arrow-up {
+  border-left: .5em solid transparent;
+  border-bottom: .5em solid rgba(69, 58, 136, 0.72);
+  border-right: .5em solid transparent;
+}
+
+.arrow-left {
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-right: .5em solid rgba(69, 58, 136, 0.72);
+}
+
+.arrow-down {
+  border-top: .5em solid rgba(69, 58, 136, 0.72);
+  border-left: .5em solid transparent;
+  border-right: .5em solid transparent;
+}
+
+.arrow-right {
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-left: .5em solid rgba(69, 58, 136, 0.72);
+}
+
+
+hr {
+  border-top: 3px solid slateblue;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin: 1.5em 0;
+}
+
+date {
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(106, 90, 205, 0.52);
+  margin-bottom: 1em;
+}
+
+date sup {
+  font-size: .5em;
+  letter-spacing: initial;
+}
+
+h2 {
+  text-transform: capitalize;
+  color: rgba(69, 58, 136, 0.72);
+  font-size: 1.5em;
+  padding: 1em;
+  border: 1px solid rgba(106, 90, 205, 0.52);
+}
+
+section {
+  background-color: lightgoldenrodyellow;
+  max-width: 700px;
+  width: 90%;
+  margin: 2em auto;
+  /*border: 20px solid slateblue;*/
+  box-sizing: border-box;
+  padding: 5em;
+}
+
+article {
+  padding: 1em;
+}
+
+@media only screen and (max-width : 640px) {
+  section {
+    /*border: 5px solid lightgray;*/
+    padding: 1em;
+  }
+}

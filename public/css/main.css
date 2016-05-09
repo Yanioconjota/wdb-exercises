@@ -30,3 +30,7 @@
   border-bottom: .5em solid transparent;
   border-left: .5em solid gray;
 }
+
+img {
+  width: 100%;
+}

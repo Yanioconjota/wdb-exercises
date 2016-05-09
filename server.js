@@ -3,9 +3,7 @@ var app = express();
 
 app.engine('html', require('ejs').renderFile);
 
-app.use("/public/fonts", express.static(__dirname + "/public/fonts"));
-app.use("/public/css", express.static(__dirname + "/public/css"));
-app.use("/public/js", express.static(__dirname + "/public/js"));
+app.use("/public", express.static(__dirname + "/public"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.get('/01-boilerplate', function (req, res) {
@@ -30,6 +28,10 @@ app.get('/05-gallery', function (req, res) {
 
 app.get('/06-minimalblog', function (req, res) {
   res.render('../06-minimalblog.html');
+});
+
+app.get('/06-minimalblog-alt', function (req, res) {
+  res.render('../06-minimalblog-alt.html');
 });
 
 app.listen(8000, function () {
