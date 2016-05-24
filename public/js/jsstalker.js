@@ -23,4 +23,14 @@ $(document).ready(function(){
     domName.append("Welcome " + firstName + " " + lastName + " " + "You're lucky to be here");
   }
 
+  var userNameNode = document.createElement("LI");
+  var textName = document.createTextNode("Your name is" + " " + firstName + " " + lastName);
+  userNameNode.appendChild(textName);
+  document.getElementById("user-results").appendChild(userNameNode);
+
+  var userAgeNode = document.createElement("LI");
+  var textAge = document.createTextNode("Your age is" + " " + age);
+  userAgeNode.appendChild(textAge);
+  document.getElementById("user-results").appendChild(userAgeNode);
+
 });
