@@ -11,7 +11,16 @@ $(document).ready(function(){
   console.log("Welcome " + firstName + " " + lastName + " " + "You're lucky to be here");
   console.log("I guess being" + " " + age + " " + "is quite enough to enter here");
 
-  domName.append("Welcome " + firstName + " " + lastName + " " + "You're lucky to be here");
-  domAge.append("I guess being" + " " + age + " " + "is quite enough to enter here");
+  if (age > 18){
+    domAge.append("I guess being" + " " + age + " " + "is quite enough to enter here");
+  } else {
+    domAge.append("Get the f*ck out of my site!!!");
+  }
+
+  if(firstName === "Janio" && lastName === "Isacura"){
+    domName.append("Welcome my master");
+  } else {
+    domName.append("Welcome " + firstName + " " + lastName + " " + "You're lucky to be here");
+  }
 
 });
