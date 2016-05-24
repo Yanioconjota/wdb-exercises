@@ -42,6 +42,10 @@ app.get('/08-landingpage', function (req, res) {
   res.render('../08-landingpage.html');
 });
 
+app.get('/09-jsstalker', function (req, res) {
+  res.render('../09-jsstalker.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
