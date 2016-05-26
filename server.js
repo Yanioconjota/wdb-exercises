@@ -46,6 +46,10 @@ app.get('/09-jsstalker', function (req, res) {
   res.render('../09-jsstalker.html');
 });
 
+app.get('/10-agecalculator', function (req, res) {
+  res.render('../10-agecalculator.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
