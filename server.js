@@ -50,6 +50,10 @@ app.get('/10-agecalculator', function (req, res) {
   res.render('../10-agecalculator.html');
 });
 
+app.get('/11-bouncer', function (req, res) {
+  res.render('../11-bouncer.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
