@@ -23,11 +23,14 @@
             count++;
           }
         </pre>
-        <ul class="table separator">
-          <li class="line"></li>
-          <li><i class="arrow-down"></i></li>
-          <li class="line"></li>
-        </ul>
+      </article>
+      <ul class="table separator">
+        <li class="line"></li>
+        <li><i class="arrow-down"></i></li>
+        <li class="line"></li>
+      </ul>
+      <h2>Anothe example</h2>
+      <article>
         <p>Even though the exercise was about a console.log message, the result can be shown in the HTML as well just by adding a few lines of code.</p>
         <pre>
           var str = prompt("Enter your name"),
@@ -47,6 +50,19 @@
         <h2>Result</h2>
         <ul id="user-results">
         </ul>
+      </article>
+      <article>
+        <h2>Infinite Loops</h2>
+        <p>An infinite loop occurs when the terminating condition in a loop is never true</p>
+        <pre>
+          var count = 0;
+
+          while (count < 10) {
+            console.log(count);
+          }
+      </pre>
+      <p>The above example prints "0" over and over because <em>count</em> is never incremented.</p>
+      <p><strong>Never do this!</strong> Unless you want your browser to crash.</p>
       </article>
     </section>
   </body>

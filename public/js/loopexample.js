@@ -23,3 +23,9 @@ $(document).ready(function(){
 //   console.log(str[count]);
 //   count++;
 // }
+//Infine loop example
+// var count = 0;
+//
+// while (count < 10) {
+//   console.log(count);
+// }

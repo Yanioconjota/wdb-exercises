@@ -8,6 +8,8 @@ body, body * {
   color: rgba(69, 58, 136, 0.72);
 }
 
+pre {margin-bottom: 5em;}
+
 p:nth-of-type(1){
   font-weight: bold;
   line-height: 3;
