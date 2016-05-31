@@ -1,8 +1,11 @@
 body {
   font-family: 'source sans pro';
-  color: rgba(69, 58, 136, 0.72);
   background-color: slateblue;
   font-size: .85rem;
+}
+
+body, body * {
+  color: rgba(69, 58, 136, 0.72);
 }
 
 p:nth-of-type(1){
@@ -96,11 +99,12 @@ date sup {
 
 h2 {
   text-transform: capitalize;
-  color: rgba(69, 58, 136, 0.72);
   font-size: 1.5em;
   padding: 1em;
   border: 1px solid rgba(106, 90, 205, 0.52);
 }
+
+.comment {color: rgba(69, 58, 136, 0.52);}
 
 section {
   background-color: lightgoldenrodyellow;

@@ -11,7 +11,40 @@
     <section>
       <article>
         <h2>Loop example</h2>
-        <p>Use "conditionals" to acomplish the following conditions</p>
+        <p>In this example some name or "String" must be typed in the prompt field and it will be printed in the console. The while loop is used in order to print each letter of the string in the following function:</p>
+        <pre>
+          <span class="comment">// string we're looping over</span>
+          var str = "hello",
+          //first character is at index 0
+              count = 0;
+
+          while(count < str.length){
+            console.log(str[count]);
+            count++;
+          }
+        </pre>
+        <ul class="table separator">
+          <li class="line"></li>
+          <li><i class="arrow-down"></i></li>
+          <li class="line"></li>
+        </ul>
+        <p>Even though the exercise was about a console.log message, the result can be shown in the HTML as well just by adding a few lines of code.</p>
+        <pre>
+          var str = prompt("Enter your name"),
+              count = 0,
+              userResults = document.getElementById("user-results"),
+              message;
+
+          while(count < str.length){
+            var textNode = document.createElement("li");
+            message = document.createTextNode(str[count]);
+            console.log(str[count]);
+            textNode.appendChild(message);
+            userResults.appendChild(textNode);
+            count++;
+          }
+        </pre>
+        <h2>Result</h2>
         <ul id="user-results">
         </ul>
       </article>

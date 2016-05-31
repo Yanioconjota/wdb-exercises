@@ -13,3 +13,13 @@ $(document).ready(function(){
     count++;
   }
 });
+
+// // string we're looping over
+// var str = "hello",
+// //first character is at index 0
+//     count = 0;
+//
+// while(count < str.length){
+//   console.log(str[count]);
+//   count++;
+// }
