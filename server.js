@@ -58,6 +58,10 @@ app.get('/12-loopexample', function (req, res) {
   res.render('../12-loopexample.html');
 });
 
+app.get('/13-whileloopproblemset', function (req, res) {
+  res.render('../13-whileloopproblemset.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
