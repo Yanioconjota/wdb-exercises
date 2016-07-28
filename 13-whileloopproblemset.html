@@ -110,18 +110,12 @@
               divNumResultsMsg;
 
           while(divNum >= 5 && divNum <= 50) {
-            if((divNum % 3) == 0){
+            if(divNum % 3 == 0 && divNum % 5 == 0){
               divNumResultsTxt = document.createElement('li');
-              divNumResultsMsg = document.createTextNode(divNum + " " + "is divisible by 3");
+              divNumResultsMsg = document.createTextNode(divNum);
               divNumResults.appendChild(divNumResultsTxt);
               divNumResultsTxt.appendChild(divNumResultsMsg);
-              console.log(divNum + " " + "is divisible by 3");
-            } else if ((divNum % 5) == 0) {
-              divNumResultsTxt = document.createElement('li');
-              divNumResultsMsg = document.createTextNode(divNum + " " + "is divisible by 5");
-              divNumResults.appendChild(divNumResultsTxt);
-              divNumResultsTxt.appendChild(divNumResultsMsg);
-              console.log(divNum + " " + "is divisible by 5");
+              console.log(divNum);
             } divNum++;
           }
         </pre>
