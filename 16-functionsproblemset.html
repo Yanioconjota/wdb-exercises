@@ -27,10 +27,16 @@
         <h2>1 - Write a function <em>isEven()</em> wich takes a single numeric argument and <b>returns <em>true</em></b> if the number <em>is even</em></h2>
         <h3>Code example:</h3>
         <pre>
-          function isEven(n){
-            if(n % 2 === 0){
+          function isEven(num){
+            if(num % 2 === 0){
               return true;
             }
+          };
+        </pre>
+        <p>But this can be easily refactored by doing this instead:</p>
+        <pre>
+          function isEven(num){
+            return num % 2 === 0;
           };
         </pre>
       </article>
@@ -42,12 +48,42 @@
       <article>
         <h2>2 - Write a function <em>factorial()</em> wich takes a single numeric argument and <b>returns</b> the <b><em>factorial</em></b> of that number. <em>Ex. 4! is 4 x 3 x 2 x 1. 6! is 6 x 5 x 4 x 3 x 2 x 1. 0! is 1.</em></h2>
         <h3>Code example:</h3>
+        <p>It can be done in several ways. The first one is by declaring the num variable and setting it to 1 and increasing its value <em>n</em> times until it reaches <em>num</em>'s value</p>
         <pre>
-          function factorial(f){
-            if(f === 0){
+          function factorial(num){
+            //define a result variable
+            var result = 1;
+            //calculate factorial and store value in result
+            for(var i = 2; i <= num; i++){
+              result *= i;
+            }
+            //return the result variable
+            return result;
+          };
+        </pre>
+        <p>Also it can be done the other way around, by setting result to <em>num</em>'s value and keep decreasing until it goes to 1, the only problem here is when <em>num</em> is equal to 0, the result will be 0, but that can be avoided with an <em>if</em> statement.</p>
+        <pre>
+          function factorial(num){
+            if(num === 0){
+              return 1;
+            }
+            //define a resul variable
+            var result = num;
+            //calculate factorial and store value in result
+            for(var i = num-1; i >= 1; i--){
+              result *= i;
+            }
+            //return the result variable
+            return result;
+          };
+        </pre>
+        <p>And we have one more way to do it with recursiveness, just by using and <em>if</em> statement</p>
+        <pre>
+          function factorial(num){
+            if(num === 0){
               return 1
             }
-            return f * factorial(f - 1);
+            return num * factorial(num - 1);
           };
         </pre>
       </article>
@@ -60,9 +96,9 @@
         <h2>3 - Write a function <em>kebabToSnake()</em> which takes a single <em>kebab-cased</em> string and <b>returns</b> the <b><em>snake_case</em></b> version.</h2>
         <h3>Code example:</h3>
         <pre>
-          function kebabToSnake(s){
-            var kebab = s;
-            var snake = kebab.replace('-','_');
+          function kebabToSnake(str){
+            var kebab = str;
+            var snake = kebab.replace(/-/g,'_');
             return snake;
           };
         </pre>
