@@ -74,6 +74,10 @@ app.get('/15-forloopproblemset.html', function (req, res) {
   res.render('../15-forloopproblemset.html');
 });
 
+app.get('/16-functionsproblemset.html', function (req, res) {
+  res.render('../16-functionsproblemset.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
