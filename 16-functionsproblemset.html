@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>While loop problem set</title>
+    <title>Functions problem set</title>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="public/css/main.css">
     <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
@@ -10,13 +10,12 @@
   <body>
     <section>
       <article>
-        <h2>While loop problem set</h2>
+        <h2>Functions problem set</h2>
         <p>Do the following:</p>
         <ul>
-          <li>1 - Print all numbers between -10 and 19</li>
-          <li>2 - Print all even numbers between 10 and 40</li>
-          <li>3 - Print all odd numbers between 300 and 333</li>
-          <li>4 - Print all numbers divisible 5 and 3 between 5 and 50</li>
+          <li>1 - Write a function <em>isEven()</em> wich takes a single numeric argument and <b>returns <em>true</em></b> if the number <em>is even</em></li>
+          <li>2 - Write a function <em>factorial()</em> wich takes a single numeric argument and <b>returns</b> the <b><em>factorial</em></b> of that number. <em>Ex. 4! is 4 x 3 x 2 x 1. 6! is 6 x 5 x 4 x 3 x 2 x 1. 0! is 1.</em></li>
+          <li>3 - Write a function <em>kebabToSnake()</em> which takes a single <em>kebab-cased</em> string and <b>returns</b> the <b><em>snake_case</em></b> version.</li>
         </ul>
       </article>
       <ul class="table separator">
@@ -28,15 +27,14 @@
         <h2>1 - Print all numbers between -10 and 19 solution</h2>
         <h3>Code example:</h3>
         <pre>
-          var num = -10,
-              numResults = document.getElementById('num-results'),
-              numResultsTxt = document.createElement("li"),
-              numResultsMsg;
-
-          while(num >= -10 && num <= 19){
+          for (var num = -10; num >= -10 && num <= 19; num++;){
+            numResultsTxt = document.createElement('li');
+            numResultsMsg = document.createTextNode(num);
+            numResults.appendChild(numResultsTxt);
+            numResultsTxt.appendChild(numResultsMsg);
             console.log(num);
-            num++;
           }
+
         </pre>
         <h3>Results:</h3>
         <ul id="num-results">
@@ -51,18 +49,17 @@
         <h2>2 - Print all even numbers between 10 and 40 solution</h2>
         <h3>Code example:</h3>
         <pre>
-          var evenNum = 10,
-              evenNumResults = document.getElementById('even-num-results'),
-              evenNumResultsMsg;
+          for(var evenNum = 10; evenNum >= 10 && evenNum <= 40; evenNum++;){
+            var evenNumResults = document.getElementById('even-num-results'),
+                evenNumResultsMsg;
 
-          while(evenNum >= 10 && evenNum <= 40) {
             if((evenNum % 2) == 0){
               evenNumResultsTxt = document.createElement('li');
               evenNumResultsMsg = document.createTextNode(evenNum);
               evenNumResults.appendChild(evenNumResultsTxt);
               evenNumResultsTxt.appendChild(evenNumResultsMsg);
               console.log(evenNum);
-            } evenNum++;
+            }
           }
         </pre>
         <h3>Results:</h3>
@@ -78,18 +75,16 @@
         <h2>3 - Print all odd numbers between 300 and 333 solution</h2>
         <h3>Code example:</h3>
         <pre>
-          var oddNum = 300;
-          oddNumResults = document.getElementById('odd-num-results'),
-          oddNumResultsMsg;
-
-          while(oddNum >= 300 && oddNum <= 333) {
+          for(var oddNum = 300; oddNum >= 300 && oddNum <= 333; oddNum++ ){
+            var oddNumResults = document.getElementById('odd-num-results'),
+                oddNumResultsMsg;
             if(oddNum % 2){
               oddNumResultsTxt = document.createElement('li');
               oddNumResultsMsg = document.createTextNode(oddNum);
               oddNumResults.appendChild(oddNumResultsTxt);
               oddNumResultsTxt.appendChild(oddNumResultsMsg);
               console.log(oddNum);
-            } oddNum++;
+            }
           }
         </pre>
         <h3>Results:</h3>
@@ -105,18 +100,16 @@
         <h2>4 - Print all numbers divisible 5 and 3 between 5 and 50 solution</h2>
         <h3>Code example:</h3>
         <pre>
-          var divNum = 5,
-              divNumResults = document.getElementById('div-num-results'),
-              divNumResultsMsg;
-
-          while(divNum >= 5 && divNum <= 50) {
+          for(var divNum = 5; divNum >= 5 && divNum <= 50; divNum++){
+            var divNumResults = document.getElementById('div-num-results'),
+                divNumResultsMsg;
             if(divNum % 3 == 0 && divNum % 5 == 0){
               divNumResultsTxt = document.createElement('li');
               divNumResultsMsg = document.createTextNode(divNum);
               divNumResults.appendChild(divNumResultsTxt);
               divNumResultsTxt.appendChild(divNumResultsMsg);
               console.log(divNum);
-            } divNum++;
+            }
           }
         </pre>
         <h3>Results:</h3>
@@ -127,5 +120,5 @@
     </section>
   </body>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="public/js/whileloopproblemset.js"></script>
+  <!-- <script type="text/javascript" src="public/js/functionproblemset.js"></script> -->
 </html>
