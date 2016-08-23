@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Higher order functions</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <article>
+        <h2>Higher order functions</h2>
+        <p>We can pass functions to other functions?!!</p>
+        <p>Yes we can. For example we can use <em>setInterval()</em> which receives two parameters, a function and a time interval for example:</p>
+        <pre>
+          function sayHi(){
+            console.log('Surprise motherfucker!');
+          };
+          // setInterval(aFunction, interval)
+          setInterval(sayHi,1000);
+        </pre>
+        <p>In this case this <em>console.log</em> will appear endlessly but we can tweak this function a bit in order to make <em>setInterval()</em> execute itself just as much as we want.</p>
+        <br>
+        <pre>
+          var count = 0;
+          function sayHi(){
+            console.log('Surprise motherfucker!');
+            console.log(count);
+            count++;
+            if(count >= 5){
+              clearInterval(interval);
+            }
+          };
+          // setInterval(aFunction, interval)
+          var interval = setInterval(sayHi,1000);
+        </pre>
+        <p>If you want to print it in your html as well, the code will look like this.</p>
+        <pre>
+          //The count variable is used to make setInterval() stop eventually
+          var count = 0;
+
+          // An example message to show in the console.log
+          var intervalTxt = 'Surprise motherfucker!';
+
+          //This is how we select elements in the DOM
+          var showInterval = document.getElementById('showInterval');
+
+          //The function setInterval is gonna execute
+          function sayHi(){
+
+            //An html element is created
+            intervalElement = document.createElement('li');
+
+            //A text node is created
+            intervalMsg = document.createTextNode(intervalTxt);
+
+            //The html element is appended inside the ul
+            showInterval.appendChild(intervalElement);
+
+            //The text nodeis appended inside the li
+            intervalElement.appendChild(intervalMsg);
+            console.log(count);
+            console.log(intervalTxt);
+
+            //The count is incremented
+            count++;
+
+            //An if statement is used to eventually stop the interval when it reaches five
+            if(count >= 5){
+              clearInterval(interval);
+            }
+          };
+
+          // setInterval(aFunction, interval)
+          var interval = setInterval(sayHi,1000);
+
+        </pre>
+        <ul id="showInterval">
+        </ul>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/setintervalexample.js"></script>
+</html>
