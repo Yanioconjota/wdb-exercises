@@ -83,8 +83,12 @@ app.get('/17-setintervalexample.html', function (req, res) {
   res.render('../17-setintervalexample.html');
 });
 
-app.get('/18-todolistarray.html', function (req, res) {
-  res.render('../18-todolistarray.html');
+app.get('/18-arraymethods.html', function (req, res) {
+  res.render('../18-arraymethods.html');
+});
+
+app.get('/19-todolistarray.html', function (req, res) {
+  res.render('../19-todolistarray.html');
 });
 
 app.listen(8000, function () {
