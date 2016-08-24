@@ -8,14 +8,22 @@ body, body * {
   color: rgba(69, 58, 136, 0.72);
 }
 
-pre {margin-bottom: 5em;}
+pre {
+  background-color: rgba(162, 155, 210, 0.32);
+  padding: 2em;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  }
 
 p:nth-of-type(1){
   font-weight: bold;
   line-height: 3;
   border-left: 1px dashed rgba(106, 90, 205, 0.52);
   padding-left: 3em;
-  margin: 4em 0;
+  margin: 2em 0;
 }
 
 p {
