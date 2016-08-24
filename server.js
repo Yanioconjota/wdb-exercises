@@ -83,6 +83,10 @@ app.get('/17-setintervalexample.html', function (req, res) {
   res.render('../17-setintervalexample.html');
 });
 
+app.get('/18-todolistarray.html', function (req, res) {
+  res.render('../18-todolistarray.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
