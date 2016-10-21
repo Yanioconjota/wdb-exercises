@@ -91,6 +91,14 @@ app.get('/19-todolistarray.html', function (req, res) {
   res.render('../19-todolistarray.html');
 });
 
+app.get('/20-arrayiteration.html', function (req, res) {
+  res.render('../20-arrayiteration.html');
+});
+
+app.get('/21-todolistoptimized.html', function (req, res) {
+  res.render('../21-todolistoptimized.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
