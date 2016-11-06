@@ -99,6 +99,10 @@ app.get('/21-todolistoptimized.html', function (req, res) {
   res.render('../21-todolistoptimized.html');
 });
 
+app.get('/22-arrayproblemset.html', function (req, res) {
+  res.render('../22-arrayproblemset.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
