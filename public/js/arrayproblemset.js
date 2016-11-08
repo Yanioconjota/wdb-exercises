@@ -15,3 +15,17 @@ function isUniform(myArray) {
   }
   return true;
 }
+
+function sumArray(myArray){
+  for(var i = 0; i < myArray.length - 1; i++) {
+    var sum = i + (i+1);
+  }
+  console.log(sum);
+}
+
+function max(myArray){
+  var maxNumber = Math.max(myArray);
+  myArray.forEach(function(item){
+    console.log(maxNumber);
+  });
+}

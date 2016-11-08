@@ -67,11 +67,11 @@
           <li>
             function <em><b>printReverse</b>()</em>
             <pre>
-              var numbers = [];
+              var myArray = [];
 
-              function printReverse(numbers){
-                numbers.reverse();
-                numbers.forEach(function(item){
+              function printReverse(myArray){
+                myArray.reverse();
+                myArray.forEach(function(item){
                   console.log(item);
                 });
               }
@@ -80,6 +80,16 @@
           <li>
             function <em><b>isUniform</b>()</em>
             <pre>
+              var myArray = [];
+
+              function isUniform(myArray) {
+                for(var i = 0; i < myArray.length - 1; i++) {
+                  if(myArray[i] !== myArray[i+1]) {
+                    return false;
+                  }
+                }
+                return true;
+              }
             </pre>
           </li>
           <li>
