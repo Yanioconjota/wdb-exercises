@@ -103,6 +103,10 @@ app.get('/22-arrayproblemset.html', function (req, res) {
   res.render('../22-arrayproblemset.html');
 });
 
+app.get('/23-arrayproblemset-colt.html', function (req, res) {
+  res.render('../23-arrayproblemset-colt.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });

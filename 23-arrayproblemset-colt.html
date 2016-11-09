@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Array problem set</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>Array problem set</h2>
+      <article>
+        <p>Do the following:</p>
+        <ul>
+          <li>
+            Write a function <em><b>printReverse()</b></em> that takes an a array as an argument and prints out the elements in the array in reverse order <em>(don't actually reverse the array itself)</em>
+            <br>
+            <pre>
+              printReverse([1,2,3,4]);
+              //4
+              //3
+              //2
+              //2
+              //1
+
+              printReverse(['a','b','c']);
+              //c
+              //b
+              //a
+            </pre>
+          </li>
+          <li>
+            Write a function <em><b>isUniform()</b></em> that takes an a array as an argument and returns <em>true</em> if all elements in the array are identical.
+            <br>
+            <pre>
+              isUniform([1,1,1,1]);     //true
+              isUniform([2,1,1,1]);     //false
+              isUniform(['a','b','p']); //false
+              isUniform(['b','b','b']); //true
+            </pre>
+            <em>Hint: use a loop.</em>
+          </li>
+          <li>
+            Write a function <em><b>sumArray()</b></em> that accepts an array of numbers and returns the sum of all numbers in the array.
+            <br>
+            <pre>
+              sumArray([1,2,3]);     //6
+              sumArray([10,3,10,4]); //27
+              sumArray([-5,100]);    //95
+            </pre>
+          </li>
+          <li>
+            Write a function <em><b>maxNumber()</b></em> that accepts an array of numbers and returns the maximum number in the array.
+            <br>
+            <pre>
+              maxNumber([1,2,3]);     //3
+              maxNumber([10,3,10,4]); //10
+              maxNumber([-5,100]);    //100
+            </pre>
+          </li>
+        </ul>
+      </article>
+      <article>
+        <h2>Solution:</h2>
+        <ul>
+          <li>
+            function <em><b>printReverse</b>()</em>
+            <pre>
+              var myArray = [];
+
+              function printReverse(myArray){
+                myArray.reverse();
+                myArray.forEach(function(item){
+                  console.log(item);
+                });
+              }
+
+              printReverse(['a','b','c'])
+              // c
+              // b
+              // a
+            </pre>
+          </li>
+          <li>
+            function <em><b>isUniform</b>()</em>
+            <pre>
+              var myArray = [];
+
+              function isUniform(myArray) {
+                for(var i = 0; i < myArray.length - 1; i++) {
+                  if(myArray[i] !== myArray[i+1]) {
+                    return false;
+                  }
+                }
+                return true;
+              }
+              isUniform([1,1,1,2])
+              //false
+              isUniform([1,1,1,1])
+              //true
+            </pre>
+          </li>
+          <li>
+            function <em><b>sumArray</b>()</em>
+            <pre>
+              function sumArray(myArray){
+                for(var i = 0; i < myArray.length - 1; i++) {
+                  var sum = i + (i+1);
+                }
+                console.log(sum);
+              }
+              sumArray([1,1,1,2])
+              //2
+            </pre>
+          </li>
+          <li>
+            function <em><b>maxNumber</b>()</em>
+            <pre>
+              function maxNumber( MyArray ){
+                return Math.max.apply( null, MyArray );
+              };
+
+              maxNumber([-5,100]);
+              //100
+            </pre>
+          </li>
+        </ul>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/arrayproblemset-colt.js"></script>
+</html>
