@@ -23,9 +23,6 @@ function sumArray(myArray){
   console.log(sum);
 }
 
-function max(myArray){
-  var maxNumber = Math.max(myArray);
-  myArray.forEach(function(item){
-    console.log(maxNumber);
-  });
-}
+function maxNumber( MyArray ){
+  return Math.max.apply( null, MyArray );
+};

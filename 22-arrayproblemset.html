@@ -51,12 +51,12 @@
             </pre>
           </li>
           <li>
-            Write a function <em><b>max()</b></em> that accepts an array of numbers and returns the maximum number in the array.
+            Write a function <em><b>maxNumber()</b></em> that accepts an array of numbers and returns the maximum number in the array.
             <br>
             <pre>
-              max([1,2,3]);     //3
-              max([10,3,10,4]); //10
-              max([-5,100]);    //100
+              maxNumber([1,2,3]);     //3
+              maxNumber([10,3,10,4]); //10
+              maxNumber([-5,100]);    //100
             </pre>
           </li>
         </ul>
@@ -75,6 +75,11 @@
                   console.log(item);
                 });
               }
+
+              printReverse(['a','b','c'])
+              // c
+              // b
+              // a
             </pre>
           </li>
           <li>
@@ -90,16 +95,34 @@
                 }
                 return true;
               }
+              isUniform([1,1,1,2])
+              //false
+              isUniform([1,1,1,1])
+              //true
             </pre>
           </li>
           <li>
             function <em><b>sumArray</b>()</em>
             <pre>
+              function sumArray(myArray){
+                for(var i = 0; i < myArray.length - 1; i++) {
+                  var sum = i + (i+1);
+                }
+                console.log(sum);
+              }
+              sumArray([1,1,1,2])
+              //2
             </pre>
           </li>
           <li>
-            function <em><b>max</b>()</em>
+            function <em><b>maxNumber</b>()</em>
             <pre>
+              function maxNumber( MyArray ){
+                return Math.max.apply( null, MyArray );
+              };
+
+              maxNumber([-5,100]);
+              //100
             </pre>
           </li>
         </ul>
