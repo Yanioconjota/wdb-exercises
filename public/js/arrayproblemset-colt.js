@@ -1,15 +1,15 @@
 var myArray = [];
 
 function printReverse(myArray){
-  myArray.reverse();
-  myArray.forEach(function(item){
-    console.log(item);
-  });
+  for (var i = myArray.length - 1; i >= 0; i--) {
+    console.log(myArray[i]);
+  }
 }
 
 function isUniform(myArray) {
-  for(var i = 0; i < myArray.length - 1; i++) {
-    if(myArray[i] !== myArray[i+1]) {
+  var first = myArray[0];
+  for(var i = 1; i < myArray.length; i++) {
+    if(myArray[i] !== first) {
       return false;
     }
   }
@@ -17,12 +17,19 @@ function isUniform(myArray) {
 }
 
 function sumArray(myArray){
-  for(var i = 0; i < myArray.length - 1; i++) {
-    var sum = i + (i+1);
-  }
-  console.log(sum);
+  var total = 0;
+  myArray.forEach(function(element){
+    total += element;
+  });
+  return total + " " +"fuck you son, todos putos! JAJAJA!";
 }
 
-function maxNumber( MyArray ){
-  return Math.max.apply( null, MyArray );
+function maxNumber(myArray){
+  var max = myArray[0];
+  for (var i = 1; i < myArray.length; i++) {
+    if(myArray[i] > max){
+      max = myArray[i];
+    }
+  }
+  return max;
 };
