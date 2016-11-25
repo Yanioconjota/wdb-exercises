@@ -1,6 +1,8 @@
-var todos = ["buy some nachos"];
+var todos = [];
 
 var input = prompt("What would you like to do?");
+
+loadTodos();
 
 while (input !== "quit") {
   //handle input
@@ -9,6 +11,7 @@ while (input !== "quit") {
     console.log("******************");
   } else if (input === "new") {
     addTodo();
+    saveTodos();
   } else if (input === "delete") {
     deleteTodo();
   }
@@ -34,7 +37,33 @@ function addTodo(){
   var newToDo = prompt("Enter new to-do");
   //add to-do to the array
   todos.push(newToDo);
+
+  // saveTodos()
   console.log("Added " + newToDo);
+}
+
+function saveTodos() {
+  // We stringify the array to save it in localStorage
+  // We save it using the key we get from the previous object
+  var data = JSON.stringify(todos);
+  localStorage.setItem('saveTodo',data);
+}
+
+function loadTodos() {
+
+  //It retrieves the key from localStorage
+  // Transforms the string into an object
+  // It saves it in todos variable
+  var data = localStorage.getItem('saveTodo');
+
+  if (data !== null) {
+
+    todos = JSON.parse(data);
+
+  }
+
+
+
 }
 
 function deleteTodo(){
