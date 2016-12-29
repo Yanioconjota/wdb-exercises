@@ -62,8 +62,6 @@ function loadTodos() {
 
   }
 
-
-
 }
 
 function deleteTodo(){
