@@ -70,16 +70,16 @@
               var myArray = [];
 
               function printReverse(myArray){
-                myArray.reverse();
-                myArray.forEach(function(item){
-                  console.log(item);
-                });
+                for (var i = myArray.length - 1; i >= 0; i--) {
+                  console.log(myArray[i]);
+                }
               }
 
-              printReverse(['a','b','c'])
-              // c
-              // b
-              // a
+              printReverse([3,6,2,5])
+              // 5
+              // 2
+              // 6
+              // 3
             </pre>
           </li>
           <li>
@@ -88,8 +88,9 @@
               var myArray = [];
 
               function isUniform(myArray) {
-                for(var i = 0; i < myArray.length - 1; i++) {
-                  if(myArray[i] !== myArray[i+1]) {
+                var first = myArray[0];
+                for(var i = 1; i < myArray.length; i++) {
+                  if(myArray[i] !== first) {
                     return false;
                   }
                 }
@@ -117,8 +118,14 @@
           <li>
             function <em><b>maxNumber</b>()</em>
             <pre>
-              function maxNumber( MyArray ){
-                return Math.max.apply( null, MyArray );
+              function maxNumber(myArray){
+                var max = myArray[0];
+                for (var i = 1; i < myArray.length; i++) {
+                  if(myArray[i] > max){
+                    max = myArray[i];
+                  }
+                }
+                return max;
               };
 
               maxNumber([-5,100]);
@@ -131,5 +138,5 @@
     </section>
   </body>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="public/js/arrayproblemset.js"></script>
+  <script type="text/javascript" src="public/js/arrayproblemset-colt.js"></script>
 </html>
