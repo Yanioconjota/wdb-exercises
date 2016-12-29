@@ -107,6 +107,10 @@ app.get('/23-arrayproblemset-colt.html', function (req, res) {
   res.render('../23-arrayproblemset-colt.html');
 });
 
+app.get('/24-moviedb-challenge.html', function (req, res) {
+  res.render('../24-moviedb-challenge.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
