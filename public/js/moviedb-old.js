@@ -8,30 +8,36 @@
 var movieDb = [
 	{
 		name : "Magnificent 7",
-		status : "seen",
+		hasWatched : "seen",
 		rating : "3.5"
 	},
 	{
 		name : "Inclredible Beasts and where to find them",
-		status : "seen",
+		hasWatched : "seen",
 		rating : "3.5"
 	},
 	{
 		name : "Rogue One",
-		status : "seen",
+		hasWatched : "seen",
 		rating : "4"
 	},
 	{
 		name : "Intruder",
-		status : "not seen",
+		hasWatched : "not seen",
 		rating : "0"
 	}
 ]
 
-var message = "You have" + " " + movieDb[i].status + " " + movieDb[i].name + " - " + movieDb[i].rating + " " + "Stars";
+console.log("Iterating through array using for");
 
 for (var i = 0; i < movieDb.length; i++) {
-	console.log("You have" + " " + movieDb[i].status + " " + movieDb[i].name + " - " + movieDb[i].rating + " " + "Stars");
+	console.log("You have" + " " + movieDb[i].hasWatched + " " + movieDb[i].name + " - " + movieDb[i].rating + " " + "Stars");
 }
 
-movieDb.forEach(function(movies,i););
+console.log("**********************************************");
+
+console.log("Iterating through array using forEach");
+
+movieDb.forEach(function(movies){
+	console.log("You have" + " " + movies.hasWatched + " " + movies.name + " - " + movies.rating + " " + "Stars");
+});
