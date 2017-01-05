@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Object Methods</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>Object Methods and the Keyword this</h2>
+      <article>
+        <p>
+          Examples of functions as methods of an object and outside the object's scope
+        </p>
+        <pre>
+          var comments = {};
+
+          comments.data = ["Dude!","Lame...","Fuck off!"];
+
+          //This exist outside the scope of the object called comments
+          function print(arr){
+            arr.forEach(function(element){
+              console.log(element);
+            });
+          }
+
+          // In order to pront the data of the comments
+          //I need to pass it to print as an argument
+          console.log("This exist outside the scope of the object called comments");
+          print(comments.data);
+
+          //By adding it as a methos of my object
+          //I use the keyword this to reference the object
+          //and acces the data which is part of the scope of this object
+          comments.print = function(){
+            this.data.forEach(function(el){
+              console.log(el);
+            });
+          }
+
+          console.log("********************");
+          console.log("This function is a method inside the object called comments");
+          comments.print();
+        </pre>
+      </article>
+      <article>
+        <h2>Solution:</h2>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/object-methods.js"></script>
+</html>
