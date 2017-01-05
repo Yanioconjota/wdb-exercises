@@ -11,7 +11,7 @@ function print(arr){
 
 // In order to pront the data of the comments
 //I need to pass it to print as an argument
-console.log("This exist outside the scope of the object called comments");
+console.log("This function exist outside the scope of the object called comments");
 print(comments.data);
 
 //By adding it as a methos of my object
