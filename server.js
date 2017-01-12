@@ -119,6 +119,10 @@ app.get('/26-jsdommanipulation.html', function (req, res) {
   res.render('../26-jsdommanipulation.html');
 });
 
+app.get('/27-jsselectors.html', function (req, res) {
+  res.render('../27-jsselectors.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
