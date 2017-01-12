@@ -115,6 +115,10 @@ app.get('/25-object-methods.html', function (req, res) {
   res.render('../25-object-methods.html');
 });
 
+app.get('/26-jsdommanipulation.html', function (req, res) {
+  res.render('../26-jsdommanipulation.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
