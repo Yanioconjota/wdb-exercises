@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript DOM Manipulation</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript DOM Manipulation</h2>
+      <article>
+         <p>The <em><b>Document Object Model</b></em> or <em><b>DOM</b></em> is a representaion of every single element inside our HTML structure</p>
+        <pre>
+          var body = document.querySelector('body');
+
+          var isBlue = false;
+
+          setInterval(function(){
+            if (isBlue) {
+              body.style.background = 'rebeccapurple';
+            } else {
+              body.style.background = 'slateblue';
+            }
+            isBlue = !isBlue;
+          },2500);
+        </pre>
+        <p>Selects body tag</p>
+        <pre>var body = document.querySelector('body');</pre>
+        <p>We set our flag to false, wich means we're initializing our variable</p>
+        <pre>var isBlue = false;</pre>
+        <p>Then we manipulate the DOM through setInterval wich takes two arguments, a function and time in <em>ms</em></p>
+        <pre>
+          setInterval(function(){
+            if (isBlue) {
+              body.style.background = 'rebeccapurple';
+            } else {
+              body.style.background = 'slateblue';
+            }
+            //Sets is blue to true
+            isBlue = !isBlue;
+          },2500);
+        </pre>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/jsdommanipulation.js"></script>
+</html>
