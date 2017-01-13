@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Important Selectors</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript Important Selectors</h2>
+      <article>
+        <p>
+          Starting from the concept of <b><em>document</em></b> being an <b><em>object</em></b>, using <b><em>dot notation</em></b> we can access all of its methods. For example:
+        </p>
+        <ul>
+          <li>document.URL;</li>
+          <li>document.head;</li>
+          <li>document.body;</li>
+          <li>document.links;</li>
+        </ul>
+        <p>The <b><em>document</em></b> comes with a bunch of methods for selecting elements. We're going to learn the following 5:</p>
+        <ul>
+          <li>document.getElementById()</li>
+          <li>document.getElementsByClassName()</li>
+          <li>document.getElementsByTagName()</li>
+          <li>document.querySelector()</li>
+          <li>document.querySelectorAll()</li>
+        </ul>
+        <pre>
+          var tag = document.getElementById('highlight');
+          tag.style.background = 'lime';
+
+          //Since getElementsByClassName and getElementsByTagName
+          //returns something that looks like an array
+          //called a node list but like an array
+          //we must specify its position
+          var tags = document.getElementsByClassName('bolded');
+          tags[0].style.fontWeight = 'bold';
+
+          var tags = document.getElementsByTagName("h1");
+          tags[0].style.color = 'red';
+
+          //select by ID
+          var tag = document.querySelector("#highlight");
+          tag.style.color = 'black';
+
+          //select by Class and returns the first 
+          //element with the declared class name
+          var tag = document.querySelector(".bolded");
+          tag.style.border = '1px solid lime';
+
+          var tag = document.querySelector("h1");
+          tag.style.border = '1px solid red';
+
+          //select by tag
+          var tags = document.querySelectorAll("h1");
+          tags[1].style.border = '1px solid purple';
+
+          //Since it returns a node list
+          // a forEach can be used to manipulate
+          // all selected elements by class
+          tags.forEach(function(i){
+            i.style.fontStyle = 'italic';
+          });
+        </pre>
+        <div class="code-example">
+          <h1>Hello</h1>
+          <h1>Goodbye</h1>
+          <ul>
+            <li id="highlight">List Item 1</li>
+            <li class="bolded">List Item 2</li>
+            <li class="bolded">List Item 3</li>
+          </ul>
+        </div>
+
+        <ul class="list-unstyled">
+          <li>
+            <b>document.getElementById()</b>: Takes a string argument and returns the one element with a matching ID
+          </li>
+          <li>
+            <b>document.getElementsByClassName()</b>: Takes a string argument and returns a list of elements that have a matching class
+          </li>
+          <li>
+            <b>document.getElementsByTagName()</b>: Returns a list of all elements of a given tag name, like <em>li</em> or <em>h1</em>
+          </li>
+          <li>
+            <b>document.querySelector()</b>: Returns the first element that matches a given CSS-style selector
+          </li>
+          <li>
+            <b>document.querySelectorAll()</b>: Returns the first element that matches a given CSS-style selector
+          </li>
+        </ul>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/jsselectors.js"></script>
+</html>
