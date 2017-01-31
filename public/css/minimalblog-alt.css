@@ -8,7 +8,7 @@ body, body * {
   color: rgba(69, 58, 136, 0.72);
 }
 
-pre {
+pre,xmp {
   background-color: rgba(162, 155, 210, 0.32);
   padding: 2em;
   white-space: pre-wrap;
