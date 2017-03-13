@@ -123,6 +123,14 @@ app.get('/27-jsselectors.html', function (req, res) {
   res.render('../27-jsselectors.html');
 });
 
+app.get('/28-selector-exercise.html', function (req, res) {
+  res.render('../28-selector-exercise.html');
+});
+
+app.get('/29-manipulatingstyle.html', function (req, res) {
+  res.render('../29-manipulatingstyle.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });

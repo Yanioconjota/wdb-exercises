@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Manipulating Style</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript Manipulating Style</h2>
+      <article>
+        <p>
+          We're going to cover different ways of:
+          <ul>
+            <li>changing an element's style</li>
+            <li>adding/removing classes</li>
+            <li>changing the content of a tag</li>
+            <li>changing attributes(src, href, etc.)</li>
+          </ul>
+        </p>
+        <h3>Style</h3>
+        <p>The style property is one way to manipulate an element's style</p>
+        <pre>
+          //SELECT
+          var tag = document.getElementById("highlight");
+
+          //MANIPULATE
+          tag.style.color = "blue";
+          tag.style.border = "10px solid red";
+          tag.style.fontSize = "70px";
+          tag.style.background = "yellow";
+          tag.style.marginTop = "200px";
+        </pre>
+        <h3>Is This a Bad Idea?</h3>
+        <p>It is recommended for styles to be defined in a separate file or files. The style property allows for quick styling, for example for testing purposes. - MDN</p>
+        <h4>Separation of Concerns</h4>
+        <img src="public/img/bk3Me.jpg" alt="Separation of Concerns">
+        <a href="http://blog.teamtreehouse.com" target="_blank">http://blog.teamtreehouse.com</a>
+        <h3>An Alterative</h3>
+        <p>Rather than directly manipulating style with JS, we can define a CSS class and then toggle it on or off with JS</p>
+        <pre>
+          //INSTEAD OF THIS:
+          var tag = document.getElementById("highlight");
+          tag.style.color = "blue";
+          tag.style.border = "10px solid red";
+        </pre>
+        <pre>
+          /*DEFINE A CLASS IN CSS*/
+          .some-class {
+            color: blue;
+            border: 10px solid red;
+          }
+        </pre>
+        <pre>
+          var tag = document.getElementById("highlight");
+          //ADD THE NEW CLASS TO THE SELECTED ELEMENT
+          tag.classList.add("some-class");
+        </pre>
+        <h3>classList</h3>
+        <p>A read-only list that contains the classes for a given element. <b>It is not an array.</b></p>
+        <pre>
+          /*DEFINE A CLASS IN CSS*/
+          .another-class {
+            color: purple;
+            fontSize: 76px;
+          }
+        </pre>
+        <pre>
+          var tag = document.querySelector("h1");
+
+          //ADD A CLASS TO THE SELECTED ELEMENT
+          tag.classList.add("another-class");
+
+          //REMOVE A CLASS
+          tag.classList.remove("another-class");
+
+          //TOGGLE A CLASS
+          tag.classList.toggle("another-class");
+        </pre>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/manipulatingstyle.js"></script>
+</html>
