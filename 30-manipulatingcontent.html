@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript manipulating tag content and attributes</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript manipulating tag content and attributes</h2>
+      <article>
+        <p>
+          We're going to cover two ways of changing a tag text content
+        </p>
+        <h3>textContent</h3>
+        <p>Returns a string of all the text contained in a given element</p>
+        <pre>
+          &lt;p&gt;
+            This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph
+          &lt;/p&gt;
+        </pre>
+        <pre>
+          /Select the &lt;p&gt; tag:
+          var tag = document.querySelector("p");
+
+          //Retrieve the textContent:
+          tag.textContent //"This is an awesome paragraph"
+
+          //alter the textContent:
+          tag.textContent = "blah blah blah";
+        </pre>
+        <h3>innerHTML</h3>
+        <p>Similar to textContent, except it returns a string of all the HTML contained in a given element</p>
+        <pre>
+          &lt;p&gt;
+            This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph
+          &lt;/p&gt;
+        </pre>
+        <pre>
+          ///Select the &lt;p&gt; tag:
+          var tag = document.querySelector("p");
+
+          tag.innerHTML
+          //"This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph"
+        </pre>
+        <h3>Attributes</h3>
+        <p>Use <b><em>getAttribute()</em></b> and <b><em>setAttribute()</em></b> to read and write attributes like <b><em>src</em></b> or <b><em>href</em></b></p>
+        <pre>
+          &lt;a href="www.google.com"&gt;I am a link&lt;/a&gt;
+          &lt;img src="logo.png"&gt;
+        </pre>
+        <pre>
+          var link = document.querySelector("a");
+          link.getAttribute("href");  //"www.google.com"
+          //CHANGE HREF ATTRIBUTE
+          link.setAttribute("href","www.dogs.com");
+          ///&lt;a href="www.dogs.com"&gt;I am a link&lt;/a&gt;
+
+          //TO CHANGE THE IMAGE SRC
+          var img = document.querySelector("img");
+          img.setAttribute("src", "corgi.png");
+          //&lt;img src="corgi.png"&gt;
+        </pre>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <!-- <script type="text/javascript" src="public/js/manipulatingstyle.js"></script> -->
+</html>
