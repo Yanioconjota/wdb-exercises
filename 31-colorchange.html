@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript color changer</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript color changer</h2>
+      <article>
+        <p>
+          Toggle the body's background color between purple and another color, when a button is clicked
+        </p>
+        <button class="big-button">Change Color</button>
+        <pre>
+          var button = document.getElementsByTagName("button");
+          var body   = document.getElementsByTagName("body");
+
+          for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('click',function(){
+              this.classList.toggle("big-button-alt");
+              for (var i = 0; i < body.length; i++) {
+                body[i].classList.toggle("bg-aqua");
+              }
+            });
+          }
+        </pre>
+        <pre>
+          var button   = document.querySelector("button");
+          var isPurple = false;
+
+          button.addEventListener('click',function(){
+            if (isPurple) {
+              document.body.classList.add("bg-aqua");
+              button.classList.add("big-button-alt");
+            } else {
+              document.body.classList.remove("bg-aqua");
+              button.classList.remove("big-button-alt");
+            }
+            isPurple = !isPurple;
+          });
+        </pre>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="public/js/changecolor.js"></script>
+</html>
