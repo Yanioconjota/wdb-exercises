@@ -1,14 +1,14 @@
-var button = document.getElementsByTagName("button");
-var body   = document.getElementsByTagName("body");
-
-for (var i = 0; i < button.length; i++) {
-  button[i].addEventListener('click',function(){
-    this.classList.toggle("big-button-alt");
-    for (var i = 0; i < body.length; i++) {
-      body[i].classList.toggle("bg-aqua");
-    }
-  });
-}
+// var button = document.getElementsByTagName("button");
+// var body   = document.getElementsByTagName("body");
+//
+// for (var i = 0; i < button.length; i++) {
+//   button[i].addEventListener('click',function(){
+//     this.classList.toggle("big-button-alt");
+//     for (var i = 0; i < body.length; i++) {
+//       body[i].classList.toggle("bg-aqua");
+//     }
+//   });
+// }
 
 // or
 //
@@ -25,3 +25,12 @@ for (var i = 0; i < button.length; i++) {
 //   }
 //   isPurple = !isPurple;
 // });
+
+//or
+
+var button   = document.querySelector("button");
+
+button.addEventListener("click",function(){
+  document.body.classList.toggle("bg-aqua");
+  button.classList.toggle("big-button-alt");
+});

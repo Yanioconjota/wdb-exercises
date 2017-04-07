@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>JavaScript color changer</title>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="public/css/main.css">
     <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
   </head>
@@ -42,6 +41,25 @@
             }
             isPurple = !isPurple;
           });
+        </pre>
+        <p>it can be even simpler, by doing:</p>
+        <pre>
+          var button   = document.querySelector("button");
+
+          button.addEventListener("click",function(){
+            document.body.classList.toggle("bg-aqua");
+            button.classList.toggle("big-button-alt");
+          });
+        </pre>
+        <p>The smooth transition is achieved using some css animations</p>
+        <pre>
+          a,button,body {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+          }
         </pre>
       </article>
       <a href="index.html">Back home</a>

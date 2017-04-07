@@ -135,6 +135,14 @@ app.get('/30-manipulatingcontent.html', function (req, res) {
   res.render('../30-manipulatingcontent.html');
 });
 
+app.get('/31-colorchange.html', function (req, res) {
+  res.render('../31-colorchange.html');
+});
+
+app.get('/32-scorekeeper.html', function (req, res) {
+  res.render('../32-scorekeeper.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
