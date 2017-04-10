@@ -143,6 +143,10 @@ app.get('/32-scorekeeper.html', function (req, res) {
   res.render('../32-scorekeeper.html');
 });
 
+app.get('/33-eventcounter', function (req, res) {
+  res.render('../33-eventcounter');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });

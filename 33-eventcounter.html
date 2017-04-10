@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Counting Events Exercise</title>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/minimalblog-alt.css">
+  </head>
+  <body>
+    <section>
+      <h2>Counting Events Exercise</h2>
+      <article>
+        <p>Count all events included in <a href="" target="_blank">MDN Event reference site</a></p>
+        <p>The MDN page from the following lecture (Counting Events Exercise) has changed since created the video was created. You may follow along in the video and use the same commands, but do not expect to get the same result (301 events). The format of the page is different now and there are some duplicates. The anchors were taken from the left column using <b><em>(.toggle-container a code)</em>path</b>.</p>
+        <h3>Solution:</h3>
+        <pre>
+          var events = document.querySelectorAll('.toggle-container li a code'),
+              eventNames = [];
+          events.forEach(function(event) {
+            eventNames.push(event.textContent);
+          });
+          var sortedEventNames = eventNames.slice().sort(),
+              dupes = [];
+          for (var i = 0; i < sortedEventNames.length; i++) {
+            if (sortedEventNames[i + 1] == sortedEventNames[i]) {
+              dupes.push(sortedEventNames[i]);
+            }
+          }
+          sortedEventNames.length - dupes.length;
+        </pre>
+        <pre>
+          // select all code elements nested inside of an anchor tag, inside of a list item,
+          // inside the .toggle-container class
+          var events = document.querySelectorAll('.toggle-container li a code'),
+              // create empty array to store all names of events
+              eventNames = [];
+        </pre>
+        <pre>
+          // loops over all events, pull their names and push them into eventNames list
+          events.forEach(function(event) {
+            eventNames.push(event.textContent);
+          });
+        </pre>
+        <pre>
+          // sort the event names by creating a copy of event names, sorting it, and assigning
+          // that sorted copy to sortedEventNamed variable
+          var sortedEventNames = eventNames.slice().sort(),
+              // create an empty array to store duplicates in
+              dupes = [];
+        </pre>
+        <pre>
+          // loop over sorted event names and check for any duplicates, push duplicates into the dupes array
+          // *this could also be done with a counter instead
+          for (var i = 0; i < sortedEventNames.length; i++) {
+            if (sortedEventNames[i + 1] == sortedEventNames[i]) {
+              dupes.push(sortedEventNames[i]);
+            }
+          }
+        </pre>
+        <pre>
+          // take away number of dupes from original number of events
+          sortedEventNames.length - dupes.length;
+        </pre>
+      </article>
+      <a href="index.html">Back home</a>
+    </section>
+  </body>
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+  <!-- <script type="text/javascript" src="public/js/scorekeeper.js"></script> -->
+</html>
