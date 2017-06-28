@@ -28,37 +28,34 @@
           }
           sortedEventNames.length - dupes.length;
         </pre>
+        <p>
+          Select all code elements nested inside of an anchor tag, inside of a list item, inside the <b><em>.toggle-container</em></b> class and creates empty array called <b><em>eventNames</em></b> to store all names of events
+        </p>
         <pre>
-          // select all code elements nested inside of an anchor tag, inside of a list item,
-          // inside the .toggle-container class
           var events = document.querySelectorAll('.toggle-container li a code'),
-              // create empty array to store all names of events
               eventNames = [];
         </pre>
+        <p>Loops over all events, pull their names and push them into <b><em>eventNames</em></b> list</p>
         <pre>
-          // loops over all events, pull their names and push them into eventNames list
           events.forEach(function(event) {
             eventNames.push(event.textContent);
           });
         </pre>
+        <p>Sort the event names by creating a copy of event names, sorting it, and assigning that sorted copy to <b><em>sortedEventNamed</em></b> variable and create an empty array to store duplicates in</p>
         <pre>
-          // sort the event names by creating a copy of event names, sorting it, and assigning
-          // that sorted copy to sortedEventNamed variable
           var sortedEventNames = eventNames.slice().sort(),
-              // create an empty array to store duplicates in
               dupes = [];
         </pre>
+        <p>Loop over sorted event names and check for any duplicates, push duplicates into the dupes array *<em>this could also be done with a counter instead</em></p>
         <pre>
-          // loop over sorted event names and check for any duplicates, push duplicates into the dupes array
-          // *this could also be done with a counter instead
           for (var i = 0; i < sortedEventNames.length; i++) {
             if (sortedEventNames[i + 1] == sortedEventNames[i]) {
               dupes.push(sortedEventNames[i]);
             }
           }
         </pre>
+        <p>Take away number of dupes from original number of events</p>
         <pre>
-          // take away number of dupes from original number of events
           sortedEventNames.length - dupes.length;
         </pre>
       </article>

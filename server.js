@@ -143,8 +143,12 @@ app.get('/32-scorekeeper.html', function (req, res) {
   res.render('../32-scorekeeper.html');
 });
 
-app.get('/33-eventcounter', function (req, res) {
-  res.render('../33-eventcounter');
+app.get('/33-eventcounter.html', function (req, res) {
+  res.render('../33-eventcounter.html');
+});
+
+app.get('/34-colorgame.html', function (req, res) {
+  res.render('../34-colorgame.html');
 });
 
 app.listen(8000, function () {
