@@ -16,12 +16,12 @@
         <h3>textContent</h3>
         <p>Returns a string of all the text contained in a given element</p>
         <pre>
-          &lt;p&gt;
-            This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph
-          &lt;/p&gt;
+          <p>
+            This is an <strong>awesome</strong> paragraph
+          </p>
         </pre>
         <pre>
-          /Select the &lt;p&gt; tag:
+          /Select the <p> tag:
           var tag = document.querySelector("p");
 
           //Retrieve the textContent:
@@ -33,39 +33,39 @@
         <h3>innerHTML</h3>
         <p>Similar to textContent, except it returns a string of all the HTML contained in a given element</p>
         <pre>
-          &lt;p&gt;
-            This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph
-          &lt;/p&gt;
+          <p>
+            This is an <strong>awesome</strong> paragraph
+          </p>
         </pre>
         <pre>
-          ///Select the &lt;p&gt; tag:
+          ///Select the <p> tag:
           var tag = document.querySelector("p");
 
           tag.innerHTML
-          //"This is an &lt;strong&gt;awesome&lt;/strong&gt; paragraph"
+          //"This is an <strong>awesome</strong> paragraph"
         </pre>
         <h3>Attributes</h3>
         <p>Use <b><em>getAttribute()</em></b> and <b><em>setAttribute()</em></b> to read and write attributes like <b><em>src</em></b> or <b><em>href</em></b></p>
         <pre>
-          &lt;a href="www.google.com"&gt;I am a link&lt;/a&gt;
-          &lt;img src="logo.png"&gt;
+          <a href="www.google.com">I am a link</a>
+          <img src="logo.png">
         </pre>
         <pre>
           var link = document.querySelector("a");
           link.getAttribute("href");  //"www.google.com"
           //CHANGE HREF ATTRIBUTE
           link.setAttribute("href","www.dogs.com");
-          ///&lt;a href="www.dogs.com"&gt;I am a link&lt;/a&gt;
+          ///<a href="www.dogs.com">I am a link</a>
 
           //TO CHANGE THE IMAGE SRC
           var img = document.querySelector("img");
           img.setAttribute("src", "corgi.png");
-          //&lt;img src="corgi.png"&gt;
+          //<img src="corgi.png">
         </pre>
       </article>
       <a href="index.html">Back home</a>
     </section>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-    <!-- <script type="text/javascript" src="public/js/manipulatingstyle.js"></script> -->
+    <script type="text/javascript" src="public/js/main.js"></script>
   </body>
 </html>

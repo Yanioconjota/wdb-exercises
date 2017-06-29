@@ -11,22 +11,82 @@
       <h2>Color Game</h2>
       <article>
         <p>Create a color game with 6 different squares with random colors in which you win when the color clicked matches the RGB value on the title</p>
-        <h3>Firts we build a simple structure containing the items</h3>
+        <h3>Part 1</h3>
+        <p>Firts we build a simple structure containing the items, wich will be 6 divs with a class called square inside a container</p>
         <pre>
-          &lt;h1&gt;The Great &lt;span id="color-display"&gt;RGB&lt;/span&gt; Color game&lt;/h1&gt;
-          &lt;div id="container"&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-            &lt;div class="square"&gt;&lt;/div&gt;
-          &lt;/div&gt;
+          <h1>The Great <span id="color-display">RGB</span> Color game</h1>
+          <div id="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </pre>
+        <p>At this point square has no properties, so we add some CSS</p>
+        <pre>
+          body {
+            background-color:  #232323;
+          }
+
+          #container {
+            max-width: 600px;
+            margin: 0 auto;
+          }
+
+          h1 {
+            color: #fff;
+          }
+
+          .square {
+            width: 30%;
+            background-color: purple;
+            padding-bottom: 30%;
+            float: left;
+            margin: 1.66%;
+          }
+        </pre>
+        <p>Since it has no functionality, we must think about the logic within the js file, you v click in the square that matches the value displayed in the title. In this instance we create an array with hard-coded RGB values and the title must contain one of this value and then when clicked it compares if the value is correct or not. if it is correct display an alert showing Correct! else chow an alert displaying wrong!</p>
+        <pre>
+          var colors = [
+            'rgb(255, 0, 0)',
+            'rgb(255, 255, 0)',
+            'rgb(0, 255, 0)',
+            'rgb(0, 255, 255)',
+            'rgb(0, 0, 255)',
+            'rgb(255, 0, 255)',
+          ];
+
+          var squares = document.querySelectorAll('.square');
+          var pickedColor = colors[3];
+          var colorDisplay = document.querySelector('#color-display');
+
+          colorDisplay.textContent = pickedColor;
+
+          for (var i = 0; i < squares.length; i++) {
+            //add initial colors to squares
+            squares[i].style.backgroundColor = colors[i];
+            // add click listeners to squares
+            squares[i].addEventListener('click',function(){
+              //grab color clicked squares
+              var clickedColor = this.style.backgroundColor;
+              //compare color to pickedColor
+              if (clickedColor === pickedColor) {
+                alert('Correct!');
+              } else {
+                alert('wrong!');
+              }
+            });
+          }
+        </pre>
+        <a href="colorgame-examplept1.html" target="blank">Link to example 1</a>
+        <h3>part 2</h3>
+        <p></p>
       </article>
       <a href="index.html">Back home</a>
     </section>
   </body>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-  <!-- <script type="text/javascript" src="public/js/scorekeeper.js"></script> -->
+  <script type="text/javascript" src="public/js/main.js"></script>
 </html>

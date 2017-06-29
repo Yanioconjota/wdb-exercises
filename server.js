@@ -151,6 +151,18 @@ app.get('/34-colorgame.html', function (req, res) {
   res.render('../34-colorgame.html');
 });
 
+app.get('/colorgame-examplept1.html', function (req, res) {
+  res.render('../colorgame-examplept1.html');
+});
+
+app.get('/colorgame-examplept2.html', function (req, res) {
+  res.render('../colorgame-examplept2.html');
+});
+
+app.get('/colorgame-examplept3.html', function (req, res) {
+  res.render('../colorgame-examplept3.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
