@@ -81,8 +81,113 @@
           }
         </pre>
         <a href="colorgame-examplept1.html" target="blank">Link to example 1</a>
-        <h3>part 2</h3>
-        <p></p>
+        <h3>Part 2</h3>
+        <p>Now we need to get rid of this anoying alerts and to do so, we need to change a little bit our html structure by adding a div that displays a message in the click event. In this case If right the <b><em>div#message</em></b> will show <b><em>"Correct!"</em></b> and match the color of the other squares with the color square we clicked and if wrong the message will be <b><em>"Try again!"</em></b> and the clicked square color will change to the body background color</p>
+        <pre>
+          <h1>The Great <span id="color-display">RGB</span> Color game</h1>
+          <div><span id="message"></span></div>
+          <div id="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
+          <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+          <script type="text/javascript" src="public/js/colorgame3.js"></script>
+        </pre>
+        <pre>
+          for (var i = 0; i < squares.length; i++) {
+            //add initial colors to squares
+            squares[i].style.backgroundColor = colors[i];
+            // add click listeners to squares
+            squares[i].addEventListener('click',function(){
+              //grab color clicked squares
+              var clickedColor = this.style.backgroundColor;
+              //compare color to pickedColor
+              if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                changeColors(clickedColor);
+              } else {
+                this.style.backgroundColor = "#232323";
+                messageDisplay.textContent = "Try again!";
+              }
+            });
+
+            function changeColors(color){
+              // loop through all the squares
+              for (var i = 0; i < squares.length; i++) {
+                //change each color to match given color
+                squares[i].style.backgroundColor = color;
+              }
+            }
+          }
+        </pre>
+        <p>Since the message is black by default we change our css by adding</p>
+        <pre>
+          span {
+            color: #FFF;
+          }
+        </pre>
+        <p>To add some <b><em>random behavior</em></b> in the color choosing process, we create a <b><em>pickColor</em></b>called pickColor</p>
+        <pre>
+          function pickColor(){
+            var random = Math.floor(Math.random() * colors.length);
+            return colors[random];
+          }
+        </pre>
+        <p>This function returns a random number between 1 and 6 wich is the length of the array, by using javascript built-in methods. <b><em>Math.random</em></b> finds a random number and <b><em>Math.floor</em></b> removes the decimals</p>
+        <p>By now our js code will loke like this</p>
+        <pre>
+          var colors = [
+            'rgb(255, 0, 0)',
+            'rgb(255, 255, 0)',
+            'rgb(0, 255, 0)',
+            'rgb(0, 255, 255)',
+            'rgb(0, 0, 255)',
+            'rgb(255, 0, 255)',
+          ];
+
+          var squares = document.querySelectorAll('.square');
+          var pickedColor = pickColor();
+          var colorDisplay = document.querySelector('#color-display');
+          var messageDisplay = document.querySelector('#message');
+
+          colorDisplay.textContent = pickedColor;
+
+          for (var i = 0; i < squares.length; i++) {
+            //add initial colors to squares
+            squares[i].style.backgroundColor = colors[i];
+            // add click listeners to squares
+            squares[i].addEventListener('click',function(){
+              //grab color clicked squares
+              var clickedColor = this.style.backgroundColor;
+              //compare color to pickedColor
+              if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                changeColors(clickedColor);
+              } else {
+                this.style.backgroundColor = "#232323";
+                messageDisplay.textContent = "Try again!";
+              }
+            });
+
+            function changeColors(color){
+              // loop through all the squares
+              for (var i = 0; i < squares.length; i++) {
+                //change each color to match given color
+                squares[i].style.backgroundColor = color;
+              }
+            }
+          }
+
+          function pickColor(){
+            var random = Math.floor(Math.random() * colors.length);
+            return colors[random];
+          }
+        </pre>
+        <a href="colorgame-examplept2.html" target="blank">Link to example 2</a>
       </article>
       <a href="index.html">Back home</a>
     </section>
