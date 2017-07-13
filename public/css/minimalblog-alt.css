@@ -17,7 +17,7 @@ body, body * {
 
 pre,xmp {
   background-color: rgba(162, 155, 210, 0.32);
-  padding: 2em;
+  padding: 2em 5px;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
@@ -125,7 +125,7 @@ h2 {
 
 section {
   background-color: lightgoldenrodyellow;
-  max-width: 700px;
+  max-width: 900px;
   width: 90%;
   margin: 2em auto;
   /*border: 20px solid slateblue;*/

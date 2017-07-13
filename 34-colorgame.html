@@ -190,9 +190,381 @@
         <a href="colorgame-examplept2.html" target="blank">Link to example 2</a>
         <h3>Part 3</h3>
         <p>
-
+          Now we want to delete our hard-coded rgb <b><em>colors</em></b> array and replace it with random RGB values. First we replace the old array with a function generateRandomColors which takes a value of 6, which is the number of squares.
         </p>
+        <pre>
+          var colors = [
+            'rgb(255, 0, 0)',
+            'rgb(255, 255, 0)',
+            'rgb(0, 255, 0)',
+            'rgb(0, 255, 255)',
+            'rgb(0, 0, 255)',
+            'rgb(255, 0, 255)',
+          ];
+        </pre>
+        <pre>
+          //6 is the amount of squares
+          var colors = generateRandomColors(6);
+        </pre>
+        <p>
+          Since that function does not exist yet we create it at the bottom of our code
+        </p>
+        <pre>
+          function generateRandomColors(num){
+            //make an array
+            //the array takes num which is the argument with the amount of squares
+            //get random color and push into array
+            //return that array
+          }
+        </pre>
+        <pre>
+          function generateRandomColors(num){
+            //make an array
+            var arr = [];
+            //the array takes num which is the argument with the amount of squares
+            //repeat num times
+            for (var i = 0; i < num; i++) {
+              //get random color and push into array
+              arr.push(randomColor());
+            }
+            //return that array
+            return arr;
+          }
+        </pre>
+        <p>
+          Notice that the value pushed into array is yet another function, this function <b><em>randomColor</em></b> is the one returns the actual random RGB values, because <b><em>generateRandomColors</em></b> just pushes the values into the squares through a for loop.
+        </p>
+        <pre>
+          function randomColor(){
+            //pick "red" from 0-255
+            var r = Math.floor(Math.random() * 256);
+            //pick "green" from 0-255
+            var g = Math.floor(Math.random() * 256);
+            //pick "blue" from 0-255
+            var b = Math.floor(Math.random() * 256);
+            //return a string with random rgb colors
+            return "rgb(" + r + ", " + g + ", " + b +")";
+          }
+        </pre>
+        <p>
+          This function generates a random color between 0 and 255 and sotres it into a variable represented with R, G and B and returns a string with the respective values that generateRandomColors will take.
+        </p>
+        <p>
+          Since we need our h1 title to match with the clicked color we create a variable called h1 and make it match with the clicked color if correct.
+        </p>
+        <pre>
+          var h1 = document.querySelector('h1');
+        </pre>
+        <pre>
+          //compare color to pickedColor
+          if (clickedColor === pickedColor) {
+            messageDisplay.textContent = "Correct!";
+            changeColors(clickedColor);
+            h1.style.backgroundColor = clickedColor;
+          } else {
+            this.style.backgroundColor = "#232323";
+            messageDisplay.textContent = "Try again!";
+          }
+        </pre>
+        <p>
+          By now our code should look like this
+        </p>
+        <pre>
+          //6 is the amount of squares
+          var colors = generateRandomColors(6);
+
+          var squares = document.querySelectorAll('.square');
+          var pickedColor = pickColor();
+          var colorDisplay = document.querySelector('#color-display');
+          var messageDisplay = document.querySelector('#message');
+          var h1 = document.querySelector('h1');
+
+          colorDisplay.textContent = pickedColor;
+
+          for (var i = 0; i < squares.length; i++) {
+            //add initial colors to squares
+            squares[i].style.backgroundColor = colors[i];
+            // add click listeners to squares
+            squares[i].addEventListener('click',function(){
+              //grab color clicked squares
+              var clickedColor = this.style.backgroundColor;
+              //compare color to pickedColor
+              if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                changeColors(clickedColor);
+                h1.style.backgroundColor = clickedColor;
+              } else {
+                this.style.backgroundColor = "#232323";
+                messageDisplay.textContent = "Try again!";
+              }
+            });
+
+            function changeColors(color){
+              // loop through all the squares
+              for (var i = 0; i < squares.length; i++) {
+                //change each color to match given color
+                squares[i].style.backgroundColor = color;
+              }
+            }
+          }
+
+          function pickColor(){
+            var random = Math.floor(Math.random() * colors.length);
+            return colors[random];
+          }
+
+          function generateRandomColors(num){
+            //make an array
+            var arr = [];
+            //the array takes num which is the argument with the amount of squares
+            //repeat num times
+            for (var i = 0; i < num; i++) {
+              //get random color and push into array
+              arr.push(randomColor());
+            }
+            //return that array
+            return arr;
+          }
+
+          function randomColor(){
+            //pick "red" from 0-255
+            var r = Math.floor(Math.random() * 256);
+            //pick "green" from 0-255
+            var g = Math.floor(Math.random() * 256);
+            //pick "blue" from 0-255
+            var b = Math.floor(Math.random() * 256);
+            //return a string with random rgb colors
+            return "rgb(" + r + ", " + g + ", " + b +")";
+          }
+        </pre>
         <a href="colorgame-examplept3.html" target="blank">Link to example 3</a>
+        <h3>Part 4</h3>
+        <p>Now we add a button wich allow us to change the colors and to restart the game once we won without reloading. First we add a button inside the div wich contains the display message, and we create an <b><em>id</em></b> called <b><em>stripe</em></b> to that container</p>
+        <pre>
+          <div>
+            <span id="message"></span>
+          </div>
+        </pre>
+        <pre>
+          <div id="stripe">
+            <button id="reset">New colors</button>
+            <span id="message"></span>
+          </div>
+        </pre>
+        <p>
+          Now change a bit the styles
+        </p>
+        <pre>
+          #stripe {
+            background-color: #fff;
+            height: 30px;
+            text-align: center;
+            color: #232323;
+          }
+        </pre>
+        <p>
+          Since the span was styled to be white we get rid of that property in order to take the <b><em>color: #232323</em></b> in <b><em>#stripe</em></b> declaration.
+        </p>
+        <p>
+          Then we add the logic to the button on the click event
+        </p>
+        <pre>
+          var resetButton = document.querySelector('#reset');
+
+          resetButton.addEventListener('click',function(){
+            //generate all new colors
+            //pick a random color from array
+            //change colorDisplay to match picked color
+            //change colors of squaresndColor = colors[i]
+            }
+          });
+        </pre>
+        <pre>
+          var resetButton = document.querySelector('#reset');
+
+          resetButton.addEventListener('click',function(){
+            //generate all new colors
+            colors = generateRandomColors(6)
+            //pick a random color from array
+            pickedColor = pickColor();
+            //change colorDisplay to match picked color
+            colorDisplay.textContent = pickedColor;
+            //change colors of squares
+            for (var i = 0; i < squares.length; i++) {
+              squares[i].style.backgroundColor = colors[i]
+            }
+            h1.style.backgroundColor = "#232323";
+            resetButton.textContent = "New colors"
+          });
+        </pre>
+        <p>
+          To generate the random color we already had that function which is <b><em>generateRandomColors()</em></b> and we picked with the <b><em>pickColor()</em></b> function. Then we loop through the squares and asign each one of them the color we randomly had from <b><em>generateRandomColors</em></b>. Finally, since the <b><em>h1</em></b> background does not reset as well we add that behavior and of course we change the content of the button to play again once we won.
+        </p>
+        <pre>
+          if (clickedColor === pickedColor) {
+            messageDisplay.textContent = "Correct!";
+            resetButton.textContent = "Play again?"
+            changeColors(clickedColor);
+            h1.style.backgroundColor = clickedColor;
+          } else {
+            this.style.backgroundColor = "#232323";
+            messageDisplay.textContent = "Try again!";
+          }
+        </pre>
+        <p>
+          At the end our code will be something like this
+        </p>
+        <pre>
+          //6 is the amount of squares
+          var colors = generateRandomColors(6);
+
+          var squares = document.querySelectorAll('.square');
+          var pickedColor = pickColor();
+          var colorDisplay = document.querySelector('#color-display');
+          var messageDisplay = document.querySelector('#message');
+          var h1 = document.querySelector('h1');
+          var resetButton = document.querySelector('#reset');
+
+          resetButton.addEventListener('click',function(){
+            //generate all new colors
+            colors = generateRandomColors(6)
+            //pick a random color from array
+            pickedColor = pickColor();
+            //change colorDisplay to match picked color
+            colorDisplay.textContent = pickedColor;
+            //change colors of squares
+            for (var i = 0; i < squares.length; i++) {
+              squares[i].style.backgroundColor = colors[i]
+            }
+            h1.style.backgroundColor = "#232323";
+            resetButton.textContent = "New colors"
+          });
+
+          colorDisplay.textContent = pickedColor;
+
+          for (var i = 0; i < squares.length; i++) {
+            //add initial colors to squares
+            squares[i].style.backgroundColor = colors[i];
+            // add click listeners to squares
+            squares[i].addEventListener('click',function(){
+              //grab color clicked squares
+              var clickedColor = this.style.backgroundColor;
+              //compare color to pickedColor
+              if (clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                resetButton.textContent = "Play again?"
+                changeColors(clickedColor);
+                h1.style.backgroundColor = clickedColor;
+              } else {
+                this.style.backgroundColor = "#232323";
+                messageDisplay.textContent = "Try again!";
+              }
+            });
+
+            function changeColors(color){
+              // loop through all the squares
+              for (var i = 0; i < squares.length; i++) {
+                //change each color to match given color
+                squares[i].style.backgroundColor = color;
+              }
+            }
+          }
+
+          function pickColor(){
+            var random = Math.floor(Math.random() * colors.length);
+            return colors[random];
+          }
+
+          function generateRandomColors(num){
+            //make an array
+            var arr = [];
+            //the array takes num which is the argument with the amount of squares
+            //repeat num times
+            for (var i = 0; i < num; i++) {
+              //get random color and push into array
+              arr.push(randomColor());
+            }
+            //return that array
+            return arr;
+          }
+
+          function randomColor(){
+            //pick "red" from 0-255
+            var r = Math.floor(Math.random() * 256);
+            //pick "green" from 0-255
+            var g = Math.floor(Math.random() * 256);
+            //pick "blue" from 0-255
+            var b = Math.floor(Math.random() * 256);
+            //return a string with random rgb colors
+            return "rgb(" + r + ", " + g + ", " + b +")";
+          }
+        </pre>
+        <a href="colorgame-examplept4.html" target="blank">Link to example 4</a>
+        <h3>Part 5</h3>
+        <p>
+          In this part we add some buttons to toggle difficulty between easy and hard. First of all we create 2 more buttons on our <b><em>#stripe</em></b> div with a class called <b><em>selected</em></b>.
+        </p>
+        <pre>
+          <div id="stripe">
+            <button id="reset">New colors</button>
+            <span id="message"></span>
+            <button id="easyBtn" class="">Easy</button>
+            <button id="hardBtn" class="selected">Hard</button>
+          </div>
+        </pre>
+        <p>
+          Then we style it.
+        </p>
+        <pre>
+          .selected {
+            background-color: blue;
+          }
+        </pre>
+        <p>
+          And then we add some logic to it. First by creating our variables and then by adding the respective event listeners
+        </p>
+        <pre>
+          var easyBtn = document.querySelector('#easyBtn');
+          var hardBtn = document.querySelector('#hardBtn');
+        </pre>
+        <pre>
+          easyBtn.addEventListener('click',function(){
+            easyBtn.classList.add('selected');
+            hardBtn.classList.remove('selected');
+            colors = generateRandomColors(3);
+            pickedColor = pickColor();
+            h1.style.backgroundColor = "#232323";
+            colorDisplay.textContent = pickedColor;
+            for (var i = 0; i < squares.length; i++) {
+              if (colors[i]) {
+                squares[i].style.backgroundColor = colors[i];
+              } else {
+                squares[i].style.display = "none";
+              }
+            }
+          });
+        </pre>
+        <p>
+          <b><em>easyBtn</em></b> works just like <b><em>New colors</em></b> but in this case we reduce the amount of squares to three by setting the random color numbers to three which by using an <b><em>if</em></b> statement we can hide the elements outside the length of the array.
+        </p>
+        <pre>
+          hardBtn.addEventListener('click',function(){
+            easyBtn.classList.remove('selected');
+            hardBtn.classList.add('selected');
+            colors = generateRandomColors(6);
+            pickedColor = pickColor();
+            h1.style.backgroundColor = "#232323";
+            colorDisplay.textContent = pickedColor;
+            for (var i = 0; i < squares.length; i++) {
+              squares[i].style.backgroundColor = colors[i];
+              squares[i].style.display = "block";
+            }
+          });
+        </pre>
+        <p>
+          <b><em>hardBtn</em></b> just reset the number of squares to 6 and show the hidden elements.
+        </p>
+        <a href="colorgame-examplept5.html" target="blank">Link to example 5</a>
       </article>
       <a href="index.html">Back home</a>
     </section>

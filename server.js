@@ -163,6 +163,26 @@ app.get('/colorgame-examplept3.html', function (req, res) {
   res.render('../colorgame-examplept3.html');
 });
 
+app.get('/colorgame-examplept4.html', function (req, res) {
+  res.render('../colorgame-examplept4.html');
+});
+
+app.get('/colorgame-examplept5.html', function (req, res) {
+  res.render('../colorgame-examplept5.html');
+});
+
+app.get('/colorgame-examplept6.html', function (req, res) {
+  res.render('../colorgame-examplept6.html');
+});
+
+app.get('/colorgame-examplept7.html', function (req, res) {
+  res.render('../colorgame-examplept7.html');
+});
+
+app.get('/colorgame-examplept8.html', function (req, res) {
+  res.render('../colorgame-examplept8.html');
+});
+
 app.listen(8000, function () {
   console.log('Example app listening on port 8000!');
 });
